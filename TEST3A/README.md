@@ -1,0 +1,1 @@
+Decorator'ler bir fonksiyonu çalıştırmadan önce ve sonra çalışmasını istediğimiz yapıları ayarlamamıza yardımcı olur. Setup metot ile önceliğini kıyaslarsak aşağıda kalır. Yani önce setup metot ardından ise decorator içersinde (eğer varsa) fonksiyondan önce tanımladığımız işlemler çalışır. Örneği python dosyası içerisinde bulunmaktadır.

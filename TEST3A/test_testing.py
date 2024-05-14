@@ -99,5 +99,24 @@ class Test_Sauce:
             assert True
         except:
             assert False
+
+
+    @pytest.mark.parametrize(
+            
+            ("username"),
+            (       
+                ("Talhaaa"),
+                ("asdasd"),
+                ("Tospikler ve Fare"),
+            ),
+            
+    )
+    def test_only_password_empty(self, username):
+        userNameInput = WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.ID,"user-name")))
+        userNameInput.send_keys(username)
+        loginButton = WebDriverWait(self.driver,5).until(EC.visibility_of_element_located((By.ID,"login-button")))
+        loginButton.click()
+        errormessage = self.driver.find_element(By.XPATH, "//*[@id='login_button_container']/div/form/div[3]/h3")
+        assert errormessage.text == "Epic sadface: Password is required"
         
         
